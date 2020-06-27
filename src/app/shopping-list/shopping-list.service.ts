@@ -15,7 +15,7 @@ export class ShoppingListService {
     new Ingredient('Grapse', 10),
   ];
 
-  constructor() {}
+  constructor() { }
 
   getIngredints() {
     return this.ingredients.slice();
@@ -29,7 +29,6 @@ export class ShoppingListService {
   addIngredients(ingredient: Ingredient[]) {
     this.ingredients.push(...ingredient);
     this.changeIngredient.next(this.ingredients.slice());
-
   }
 
 }
