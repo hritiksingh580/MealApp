@@ -10,8 +10,8 @@
                 <input type="password" class="form-control">
             </div>
             <div class="form-group">
-                <button class="btn btn-primary">Login</button> | 
-                <button class="btn btn-primary">Switch to Signup</button>
+                <button class="btn btn-primary">{{isloggedIn ? 'Login' : 'Sign uo'}}</button> | 
+                <button class="btn btn-primary" (click)="onSwitchMode()">Switch to {{ isloggedIn ? 'Sign up' :'login'}}</button>
             </div>
         </form>
     </div>
