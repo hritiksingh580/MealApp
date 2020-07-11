@@ -10,6 +10,8 @@ import { AuthService } from './auth.service';
 })
 export class AuthComponent implements OnInit {
   isloggedIn: boolean = true;
+  isLoading: boolean = false;
+  error: string = null;
 
   constructor(private authService: AuthService) { }
 
@@ -21,16 +23,26 @@ export class AuthComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
+    this.isLoading = true;
     if (!this.isloggedIn) {
       this.authService.SingUp(form.value['email'], form.value['password'])
+        
         .subscribe(response => {
           console.log(response)
+          this.isLoading = false;
+        }, error => {
+          this.error = error;
+          this.isLoading = false;
         })
     } else {
       this.authService.login(form.value['email'], form.value['password'])
-        .subscribe(response => {
-          console.log(response);
-        })
+      .subscribe(response => {
+        console.log(response)
+        this.isLoading = false;
+      }, error => {
+        this.error = error;
+        this.isLoading = false;
+      })
     }
     form.reset()
   }

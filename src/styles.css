@@ -1,1 +1,134 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --theme: var(--theme-production);
+    --theme-dark: var(--theme-production-dark);
+    --theme-stage: #2196F3;
+    --theme-stage-dark: #1976D2;
+    --theme-production: #302c35;
+    --theme-production-dark: #302c35;
+    --theme-development: #4CAF50;
+    --theme-development-dark: #689F38;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.h-100vh {
+    height: 100vh;
+}
+
+.w-100vh {
+    width: 100vh;
+}
+
+.bg-main {
+    background-color: var(--theme);
+    color: white;
+}
+
+.bg-transparent {
+    background-color: whitesmoke;
+}
+
+.modal-header {
+    color: whitesmoke;
+    background-color: #333333;
+}
+
+.vertical-center {
+    display: flex!important;
+    align-items: center;
+}
+
+.horizontal-center {
+    display: flex!important;
+    justify-content: center;
+}
+
+.center-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dropdown-item {
+    padding-left: 5px;
+}
+
+.dropdown-item.active {
+    color: white;
+}
+
+.dropdown-menu {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.bg-trans {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.stats-circle {
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    color: white;
+    opacity: 0.5;
+}
+
+.stats-text {
+    font-size: 20px;
+}
+
+.heading {
+    font-size: 24px;
+    color: black;
+    font-weight: 300;
+}
+
+.subheading {
+    font-size: 18px;
+    color: grey;
+    font-weight: 300;
+}
+
+.page-header {
+    padding: 15px;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 15px;
+}
+
+.message {
+    display: none;
+    background-color: var(--theme);
+    color: white;
+}
+
+@media only screen and (max-width:950px) {
+    .app {
+        display: none;
+    }
+    .message {
+        display: block;
+    }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

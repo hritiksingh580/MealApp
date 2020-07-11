@@ -1,14 +1,61 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <title>MealApp</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta charset="utf-8">
+    <title>MealApp</title>
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        .logo-center {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .message {
+            height: 100vh;
+            width: 100%;
+            display: none;
+            background-color: var(--theme);
+        }
+    </style>
 </head>
+
 <body>
-  <app-root>Loading..</app-root>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <div class="app">
+        <app-root>
+            <div class="logo-center">
+                <div>
+                    <img src="assets/main-logo.png">
+                </div>
+            </div>
+        </app-root>
+    </div>
+    <div class="message">
+        <div class="message">
+            <div>
+                <div class="logo-center">
+                    <div class="d-flex flex-column align-items-center justify-content-center">
+                        <img src="assets/meal-app-logo.png" style="width: 200px;">
+                        <div class="center-parent mt-3">
+                            <div class="circle unset-animation blue m-3"></div>
+                            <div class="circle unset-animation green m-3"></div>
+                            <div class="circle unset-animation yellow m-3"></div>
+                        </div>
+                        <div class="lead text-center"><b>Apologies!</b></div>
+                        <small class="text-secondary w-75 text-light text-center text-justify">We don't operate on devices with smaller viewport due to our design contraints. You can switch to Desktop View or operate on a larger window size. Thanks!
+                  </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 </body>
+
 </html>

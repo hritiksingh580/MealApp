@@ -1,7 +1,13 @@
+<div class="container" *ngIf="isLoading">
+    <div class="row justify-content-md-center">
+        <app-loading-spinner></app-loading-spinner>
+    </div>
+</div>
+
 <div class="row">
     <div class="col-sm-12 col-md-6 col-md-offset-3">
-        <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
-            <div class="form-group" >
+        <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
+            <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" class="form-control" name="email" ngModel email required>
             </div>
@@ -10,7 +16,7 @@
                 <input type="password" id="password" class="form-control" name="password" ngModel minlength="6" required>
             </div>
             <div class="form-group">
-                <button class="btn btn-primary" [disabled]="!authForm.valid">{{isloggedIn ? 'Login' : 'Sign uo'}}</button> | 
+                <button class="btn btn-primary" [disabled]="!authForm.valid">{{isloggedIn ? 'Login' : 'Sign uo'}}</button> |
                 <button class="btn btn-primary" (click)="onSwitchMode()">Switch to {{ isloggedIn ? 'Sign up' :'login'}}</button>
             </div>
         </form>
