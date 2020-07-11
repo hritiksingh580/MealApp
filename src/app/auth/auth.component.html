@@ -3,9 +3,11 @@
         <app-loading-spinner></app-loading-spinner>
     </div>
 </div>
-
 <div class="row">
     <div class="col-sm-12 col-md-6 col-md-offset-3">
+        <div class="alert alert-danger" *ngIf="error">
+            <p>{{ error }}</p>
+        </div>
         <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
             <div class="form-group">
                 <label for="email">Email</label>
@@ -16,7 +18,7 @@
                 <input type="password" id="password" class="form-control" name="password" ngModel minlength="6" required>
             </div>
             <div class="form-group">
-                <button class="btn btn-primary" [disabled]="!authForm.valid">{{isloggedIn ? 'Login' : 'Sign uo'}}</button> |
+                <button class="btn btn-primary" [disabled]="!authForm.valid">{{isloggedIn ? 'Login' : 'Sign up'}}</button> |
                 <button class="btn btn-primary" (click)="onSwitchMode()">Switch to {{ isloggedIn ? 'Sign up' :'login'}}</button>
             </div>
         </form>
